@@ -1,0 +1,2 @@
+docker build --tag dota_api .
+docker run --publish 42744:42744 dota_api
