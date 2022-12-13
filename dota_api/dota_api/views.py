@@ -18,7 +18,7 @@ def leaderboard(request, accounts_list_str, query_period):
         leader_board = dota_functions.rank_players_by_wl(accounts_query, 30)
     elif query_period == 'last_year':
         leader_board = dota_functions.rank_players_by_wl(accounts_query, 365)
-    else:
+    elif query_period == 'all_time':
         leader_board = dota_functions.rank_players_by_wl(accounts_query)
 
     return(JsonResponse({"leaderboard":leader_board}))
