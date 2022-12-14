@@ -64,5 +64,6 @@ finally, parse the response as a json
     <li>6. Make recommendations based on game patch_id. Changes between patches might make certain heroes more popular and it might be better to make recommendations based on that, currently we are only taking 30 days worth of data.</li>
     <li>7. Take into account the role typically played by that account, that has a large impact on what heroes should be recommended as certain heroes are better suited for certain lanes/roles.</li>
     <li>8. Other metrics to determine how well recommendation engine is such as top k recommendations etc.</li>
+    <li>9. During the preparation of the data for the recommender system, assign weights in an exponentially decaying fashion (i.e. higher weights to more recent matches).</li>
   </ul>
 </ul>
