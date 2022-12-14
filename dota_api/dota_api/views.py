@@ -7,8 +7,10 @@ from django.http import JsonResponse
 
 def leaderboard(request, accounts_list_str, query_period):
     
+    #split string into list of account_ids
     accounts_query = [(account_id.strip()) for account_id in accounts_list_str.split(',')]
     
+    #query relevant period
     if "-" in query_period: 
         date_object = datetime.strptime(query_period, "%Y-%m-%d").date()
         leader_board = dota_functions.rank_players_by_wl(accounts_query, abs((date.today() - date_object).days))

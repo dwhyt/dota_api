@@ -5,6 +5,10 @@ First build the image using the first command in "commands.txt"
 Next run a container instance of the images using the second command in "commands.txt"
 
 Example queries for leaderboard:
+http://localhost:42744/leaderboard/<list of account ids separated by ",">/<date in "YYYY-MM-DD" format>
+OR
+http://localhost:42744/leaderboard/<list of account ids separated by ",">/<"last_week" or "last_month" or "last_year" or "all_time">
+
 http://localhost:42744/leaderboard/250544263, 190258756, 237578577, 302429528/2021-12-04
 http://localhost:42744/leaderboard/250544263,190258756,237578577,302429528/last_week
 http://localhost:42744/leaderboard/250544263,190258756,237578577,302429528/last_month
@@ -12,6 +16,8 @@ http://localhost:42744/leaderboard/250544263,190258756,237578577,302429528/last_
 http://localhost:42744/leaderboard/250544263,190258756,237578577,302429528/all_time
 
 Example queries for hero recommender:
+http://localhost:42744/hero_recommender/<account_id>
+
 http://localhost:42744/hero_recommender/191312823
 http://localhost:42744/hero_recommender/237578577
 
@@ -57,5 +63,6 @@ finally, parse the response as a json
     <li>5. Real-time hero recommendations. Make hero recommendations based on the picks already made on both the home team and enemy team, as well as which side the player is playing on (this matters to a certain extent). The objective of this is to make better recommendations that take into account the context of the match.</li>
     <li>6. Make recommendations based on game patch_id. Changes between patches might make certain heroes more popular and it might be better to make recommendations based on that, currently we are only taking 30 days worth of data.</li>
     <li>7. Take into account the role typically played by that account, that has a large impact on what heroes should be recommended as certain heroes are better suited for certain lanes/roles.</li>
+    <li>8. Other metrics to determine how well recommendation engine is such as top k recommendations etc.</li>
   </ul>
 </ul>
